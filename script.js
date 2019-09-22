@@ -10,6 +10,9 @@ function update(field, value) {
 }
 
 $(document).ready(function() {
+    $.ajax({
+        cache: false
+    });
     setInterval($.get, 2000, "streaminfo.json", { dummy: Math.random() }, function(data) {
         // Global information
         update($("#title"), data["title"]);
