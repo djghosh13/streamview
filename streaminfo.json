@@ -10,12 +10,12 @@
     "nextsong": "This Game",
     "left": {
         "name": "Ursa Major",
-        "score": 2,
+        "score": 1,
         "stream": "sc2ad"
     },
     "right": {
-        "name": "Ursa Gayjor",
-        "score": 1,
+        "name": "Ursa Minor",
+        "score": 2,
         "stream": "trueavid"
     }
 }
