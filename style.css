@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Computer Modern";
-    src: url(cmunss.ttf);
+    src: url(res/cmunss.ttf);
 }
 
 html {
@@ -11,7 +11,7 @@ html {
 
 body {
     background-color: black;
-    background-image: url(https://cdn.discordapp.com/attachments/578795669997748235/624834344560754688/BS_Overlay_bg_only.png);
+    background-image: url(res/background.png);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -40,7 +40,7 @@ body {
     justify-content: center;
     align-items: stretch;
 
-    background-image: url("cvre_header.svg");
+    background-image: url("res/cvre_header.svg");
     background-repeat: no-repeat;
     background-size: 32% auto;
     background-position: center top;
@@ -117,7 +117,7 @@ body {
     line-height: 11.8%;
 
     background-color: transparent;
-    background-image: url(next_song.svg);
+    background-image: url(res/next_song.svg);
     background-size: cover;
 }
 
@@ -192,9 +192,9 @@ body {
     display: inline-block;
 
     background-size: cover;
-    background-image: url(light_off.svg);
+    background-image: url(res/light_off.svg);
 }
 
 .point.on {
-    background-image: url(light_on.svg);
+    background-image: url(res/light_on.svg);
 }
