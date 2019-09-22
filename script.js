@@ -28,13 +28,12 @@ $(document).ready(function() {
                     "https://player.twitch.tv/?volume=1&!muted&channel=" + data[side]["stream"]
                 );
             }
-            let score = data[side]["score"];
-            update($("#score-" + side), score);
-            for (let i = 0; i < 3; i++) {
-                if (score > i) {
-                    $(".points." + side + " > .point")[i].addClass("on");
+            update($("#score-" + side), data[side]["score"]);
+            for (let i = 1; i <= 3; i++) {
+                if (data[side]["score"] >= i) {
+                    $(".points." + side + " > .point:nth-child(" + i + ")").addClass("on");
                 } else {
-                    $(".points." + side + " > .point")[i].removeClass("on");
+                    $(".points." + side + " > .point:nth-child(" + i + ")").removeClass("on");
                 }
             }
         }
