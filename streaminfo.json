@@ -1,21 +1,21 @@
 {
-    "title": "N/A",
-    "casters": "N/A",
+    "title": "D2 Prelims",
+    "casters": "sc2ad, trueavid",
     "song": {
-        "name": "N/A",
-        "artist": "N/A",
-        "bpm": 0,
-        "mapper": "N/A"
+        "title": "Gurenge",
+        "artist": "LiSA",
+        "bpm": 100,
+        "mapper": "Somebody"
     },
-    "nextsong": "N/A",
+    "nextsong": "This Game",
     "left": {
-        "name": "N/A",
-        "score": 0,
-        "stream": ""
+        "name": "Ursa Major",
+        "score": 2,
+        "stream": "sc2ad"
     },
     "right": {
-        "name": "N/A",
-        "score": 0,
-        "stream": ""
+        "name": "Ursa Gayjor",
+        "score": 1,
+        "stream": "trueavid"
     }
 }
