@@ -1,3 +1,8 @@
+var currentStream = {
+    "left": "",
+    "right": ""
+};
+
 $(document).ready(function() {
     setInterval($.get, 2000, "streaminfo.json", "", function(data) {
         // Global information
@@ -11,9 +16,11 @@ $(document).ready(function() {
         // Stream information
         for (let side of ["left", "right"]) {
             $("#streamer-" + side).html(data[side]["name"]);
-            let newSrc = "https://player.twitch.tv/?volume=1&!muted&channel=" + data[side]["stream"];
-            if ($("#player-" + side).attr("src") != newSrc) {
-                $("#player-" + side).attr("src", newSrc);
+            if (currentStream[side] != data[side]["stream"]) {
+                currentStream[side] = data[side]["stream"];
+                $("#player-" + side).attr("src",
+                    "https://player.twitch.tv/?volume=1&!muted&channel=" + data[side]["stream"]
+                );
             }
             let score = data[side]["score"];
             $("#score-" + side).html(score);
