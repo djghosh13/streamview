@@ -1,0 +1,21 @@
+{
+    "title": "N/A",
+    "casters": "N/A",
+    "song": {
+        "name": "N/A",
+        "artist": "N/A",
+        "bpm": 0,
+        "mapper": "N/A"
+    },
+    "nextsong": "N/A",
+    "left": {
+        "name": "N/A",
+        "score": 0,
+        "stream": ""
+    },
+    "right": {
+        "name": "N/A",
+        "score": 0,
+        "stream": ""
+    }
+}
