@@ -11,21 +11,30 @@
             <span class="title" id="title">
                 Loading...
             </span>
-            <span class="score left">
+            <span class="score left" id="score-left">
                 0
             </span>
-            <span class="score right">
+            <span class="score right" id="score-right">
                 1
             </span>
+            <div class="points left">
+                <div class="point on"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+            <div class="points right">
+                <div class="point on"></div>
+                <div class="point on"></div>
+                <div class="point"></div>
+            </div>
         </div>
         <div class="streams">
             <div class="left stream">
-                <div class="points">
-                    <div class="point on"></div>
-                    <div class="point on"></div>
-                    <div class="point"></div>
+                <div class="streamer" id="streamer-left">
+                    Loading...
                 </div>
                 <iframe
+                    id="player-left"
                     src="https://player.twitch.tv/?volume=1&!muted&channel=sc2ad"
                     frameborder="0"
                     scrolling="no"
@@ -33,12 +42,11 @@
                 </iframe>
             </div>
             <div class="right stream">
-                <div class="points">
-                    <div class="point on"></div>
-                    <div class="point"></div>
-                    <div class="point"></div>
+                <div class="streamer" id="streamer-right">
+                    Loading...
                 </div>
                 <iframe
+                    id="player-right"
                     src="https://player.twitch.tv/?volume=1&!muted&channel=sc2ad"
                     frameborder="0"
                     scrolling="no"
@@ -47,8 +55,9 @@
             </div>
         </div>
         <img class="cvre-logo" src="res/cvre_logo.png" />
-        <div class="caster-info" id="casters">
-            Loading...
+        <div class="caster-info">
+            Casters:<br />
+            <span id="casters">Loading...</span>
         </div>
         <div class="song-info">
             Song: <span id="song-title">Loading...</span><br />
@@ -57,7 +66,7 @@
             Mapper: <span id="song-mapper">Loading...</span>
         </div>
         <div class="next-song">
-            <p id="next-song">Loading...</p>
+            <p>Next Song:<br /><span id="next-song">Loading...</span></p>
         </div>
     </body>
 </html>

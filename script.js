@@ -10,7 +10,12 @@ $(document).ready(function() {
         }
         // Stream information
         for (let side of ["left", "right"]) {
-            
+            $("#streamer-" + side).html(data[side]["name"]);
+            $("#player-" + side).attr("src",
+                "https://player.twitch.tv/?volume=1&!muted&channel=" + data[side]["stream"]
+            );
+            let score = data[side]["score"];
+            $("#score-" + side).html(score);
         }
     }, "json");
 });

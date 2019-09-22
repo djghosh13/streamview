@@ -91,9 +91,9 @@ body {
     bottom: 0.5%;
     left: 50%;
     width: 35.6%;
-    height: 16%;
+    height: 18%;
     
-    font-size: 1.8em;
+    font-size: 1.7em;
     margin-left: -18.8%;
     padding: 1%;
     padding-top: 3%;
@@ -122,16 +122,17 @@ body {
 }
 
 .next-song p {
-    line-height: 1.5;
+    line-height: 1.4;
     display: inline-block;
     vertical-align: middle;
+    margin-top: 3%;
 }
 
 /* Logo */
 
 .cvre-logo {
     position: fixed;
-    bottom: 20%;
+    bottom: 22%;
     left: 50%;
     width: 14%;
     height: 12%;
@@ -143,7 +144,7 @@ body {
 
 .streams {
     position: fixed;
-    bottom: 25%;
+    bottom: 27%;
     width: 100%;
     height: 60%;
 
@@ -166,16 +167,25 @@ body {
     padding: 0 0.4%;
 }
 
-.streams .stream iframe {
+.stream .streamer {
+    background-color: rgba(120, 60, 180, 0.9);
+    margin-bottom: 0.8%;
+    padding: 1.2%;
+
+    font-size: 1.6em;
+
+    border-radius: 10pt;
+}
+
+.stream iframe {
     flex-grow: 1;
 }
 
 /* Scoring lights */
 
-.stream .points {
-
+.points {
     background-color: rgba(120, 60, 180, 0.9);
-    margin-bottom: 1.5%;
+    margin-bottom: 0.8%;
     padding: 1.5%;
 
     border-radius: 10pt;
@@ -183,6 +193,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+
+    display: none !important;
 }
 
 .point {
