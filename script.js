@@ -1,5 +1,5 @@
 $(document).ready(function() {
     setInterval($.get, 2000, "streaminfo.json", "", function(data) {
-        console.log(data);
+        $("#title").text(data["title"]);
     }, "json");
 });
