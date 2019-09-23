@@ -3,7 +3,7 @@ var currentStream = {
     "right": ""
 };
 
-function update(field, value) {
+function pullLS(field, value) {
     if (field.html() != value) {
         field.html(value);
     }
@@ -15,23 +15,24 @@ $(document).ready(function() {
     });
     setInterval($.get, 2000, "streaminfo.json", null, function(data) {
         // Global information
-        update($("#title"), data["title"]);
-        update($("#casters"), data["casters"]);
-        update($("#next-song"), data["nextsong"]);
+        pullLS($("#title"), data["title"]);
+        pullLS($("#casters"), data["casters"]);
+        pullLS($("#next-song"), data["nextsong"]);
         // Song information
         for (let key in data["song"]) {
-            update($("#song-" + key), data["song"][key]);
+            pullLS($("#song-" + key), data["song"][key]);
         }
         // Stream information
         for (let side of ["left", "right"]) {
-            update($("#streamer-" + side), data[side]["name"]);
+            pullLS($("#streamer-" + side), data[side]["streamer"]);
+            // TODO: Something with stream url
             if (currentStream[side] != data[side]["stream"]) {
                 currentStream[side] = data[side]["stream"];
                 $("#player-" + side).attr("src",
-                    "https://player.twitch.tv/?volume=1&!muted&channel=" + data[side]["stream"]
+                    "https://player.twitch.tv/?muted=true&autoplay=true&channel=" + data[side]["stream"]
                 );
             }
-            update($("#score-" + side), data[side]["score"]);
+            pullLS($("#score-" + side), data[side]["score"]);
             for (let i = 1; i <= 3; i++) {
                 if (data[side]["score"] >= i) {
                     $(".points." + side + " > .point:nth-child(" + i + ")").addClass("on");
