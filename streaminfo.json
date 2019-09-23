@@ -1,21 +1,21 @@
 {
-    "title": "Please work",
-    "casters": "sc2ad, trueavid",
+    "title": "",
+    "casters": "",
+    "nextsong": "",
     "song": {
-        "title": "Waves of Serenity",
-        "artist": "Teri-sensei",
-        "bpm": 204,
-        "mapper": "Karu-chan"
+        "title": "",
+        "artist": "",
+        "bpm": "",
+        "mapper": ""
     },
-    "nextsong": "Gurenge",
     "left": {
-        "name": "Ursa Major",
-        "score": 2,
-        "stream": "sc2ad"
+        "streamer": "",
+        "stream": "",
+        "score": 0
     },
     "right": {
-        "name": "Ursa Minor",
-        "score": 1,
-        "stream": "trueavid"
+        "streamer": "",
+        "stream": "",
+        "score": 0
     }
 }

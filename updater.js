@@ -37,7 +37,10 @@ $(document).ready(function() {
                 }
             }
         }
-        console.log(data);
+        // Write to file
+        $.post("saveinfo.php", { data: JSON.stringify(data) }, function() {
+            $.get("streaminfo.json", "", receiveAll, "json");
+        }, "text");
     });
 });
 
