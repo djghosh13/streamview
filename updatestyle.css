@@ -1,0 +1,44 @@
+input[type="text"] {
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: inherit;
+    max-width: 100%;
+    padding: 0;
+}
+
+input[type="text"]:hover {
+    font-weight: bolder;
+}
+
+img#submit {
+    cursor: pointer;
+}
+
+/* Stream window */
+
+.stream .window {
+    flex-grow: 1;
+    background-color: black;
+    padding-top: 10%;
+    font-size: 1.8em;
+}
+
+/* Adjustments to account for textbox */
+
+.title input[type="text"] {
+    text-align: center;
+}
+
+.score {
+    width: 1.1%;
+}
+.score input[type="text"] {
+    width: 100%;
+}
+
+.next-song input[type="text"] {
+    width: 100%;
+}

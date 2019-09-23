@@ -3,42 +3,48 @@ var currentStream = {
     "right": ""
 };
 
-function update(field, value) {
+function pullLS(field, value) {
     if (field.html() != value) {
         field.html(value);
     }
 }
 
+function lsread(key) {
+    return localStorage.getItem("cvre_overlay_" + key);
+}
+
 $(document).ready(function() {
-    $.ajax({
-        cache: false
-    });
-    setInterval($.get, 2000, "streaminfo.json", null, function(data) {
-        // Global information
-        update($("#title"), data["title"]);
-        update($("#casters"), data["casters"]);
-        update($("#next-song"), data["nextsong"]);
-        // Song information
-        for (let key in data["song"]) {
-            update($("#song-" + key), data["song"][key]);
-        }
-        // Stream information
-        for (let side of ["left", "right"]) {
-            update($("#streamer-" + side), data[side]["name"]);
-            if (currentStream[side] != data[side]["stream"]) {
-                currentStream[side] = data[side]["stream"];
-                $("#player-" + side).attr("src",
-                    "https://player.twitch.tv/?volume=1&!muted&channel=" + data[side]["stream"]
-                );
-            }
-            update($("#score-" + side), data[side]["score"]);
-            for (let i = 1; i <= 3; i++) {
-                if (data[side]["score"] >= i) {
-                    $(".points." + side + " > .point:nth-child(" + i + ")").addClass("on");
-                } else {
-                    $(".points." + side + " > .point:nth-child(" + i + ")").removeClass("on");
-                }
-            }
-        }
-    }, "json");
+    setInterval(updateAll, 2000);
 });
+
+function updateAll() {
+    let data = localStorage.getItem("cvre_overlay");
+    if (data === null) return;
+    // Global information
+    pullLS($("#title"), lsread("title"));
+    pullLS($("#casters"), lsread("casters"));
+    pullLS($("#next-song"), lsread("nextsong"));
+    // Song information
+    for (let key of ["title", "artist", "bpm", "mapper"]) {
+        pullLS($("#song-" + key), lsread("song_" + key));
+    }
+    // Stream information
+    for (let side of ["left", "right"]) {
+        pullLS($("#streamer-" + side), lsread(side + "_streamer"));
+        // TODO: Something with stream url
+        if (currentStream[side] != lsread(side + "_stream")) {
+            currentStream[side] = lsread(side + "_stream");
+            $("#player-" + side).attr("src",
+                "https://player.twitch.tv/?volume=1&!muted&channel=" + lsread(side + "_stream")
+            );
+        }
+        pullLS($("#score-" + side), lsread(side + "_score"));
+        for (let i = 1; i <= 3; i++) {
+            if (lsread(side + "_score") >= i) {
+                $(".points." + side + " > .point:nth-child(" + i + ")").addClass("on");
+            } else {
+                $(".points." + side + " > .point:nth-child(" + i + ")").removeClass("on");
+            }
+        }
+    }
+}
