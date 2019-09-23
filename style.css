@@ -67,11 +67,11 @@ body {
 
 .header .score.left {
     left: 50%;
-    margin-left: -13%;
+    margin-left: -13.3%;
 }
 .header .score.right {
     right: 50%;
-    margin-right: -13%;
+    margin-right: -13.3%;
 }
 
 /* Footer */
