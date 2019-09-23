@@ -13,7 +13,7 @@ $(document).ready(function() {
     $.ajax({
         cache: false
     });
-    setInterval($.get, 2000, "streaminfo.json", { dummy: Math.random() }, function(data) {
+    setInterval($.get, 2000, "streaminfo.json", null, function(data) {
         // Global information
         update($("#title"), data["title"]);
         update($("#casters"), data["casters"]);

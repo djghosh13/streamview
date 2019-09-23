@@ -46,6 +46,8 @@ body {
     justify-content: center;
     align-items: stretch;
 
+    z-index: 1;
+
     background-image: url("res/cvre_header.svg");
     background-repeat: no-repeat;
     background-size: 32% auto;
@@ -174,13 +176,27 @@ body {
 }
 
 .stream .streamer {
-    background-color: rgba(120, 60, 180, 0.9);
-    margin-bottom: 0.8%;
+    margin-bottom: 0;
     padding: 1.2%;
 
     font-size: 1.6em;
 
-    border-radius: 10pt;
+    /*border-radius: 10pt;*/
+}
+
+.stream.left .streamer {
+    background-image: linear-gradient(to left,
+        rgb(120, 60, 180) 5%,
+        rgba(120, 60, 180, 0.6) 50%,
+        rgb(120, 60, 180) 95%
+    );
+}
+.stream.right .streamer {
+    background-image: linear-gradient(to right,
+        rgb(120, 60, 180) 5%,
+        rgba(120, 60, 180, 0.6) 50%,
+        rgb(120, 60, 180) 95%
+    );
 }
 
 .stream iframe {
@@ -225,4 +241,18 @@ body {
 
 .point.on {
     background-image: url(res/light_on.svg);
+}
+
+.divider {
+    position: fixed;
+    left: 50%;
+    top: 0;
+
+    width: 1%;
+    height: 75%;
+    margin-left: -0.5%;
+    background-image: linear-gradient(to bottom,
+        rgb(120, 60, 180) 25%,
+        rgb(112, 56, 147) 80%
+    );
 }
