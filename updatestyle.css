@@ -17,6 +17,16 @@ img#submit {
     cursor: pointer;
 }
 
+.points .point {
+    cursor: pointer;
+}
+.points .point:hover {
+    background-image: url(res/light_on.svg);
+}
+.points .point.on:hover {
+    background-image: url(res/light_off.svg);
+}
+
 /* Stream window */
 
 .stream .window {

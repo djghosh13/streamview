@@ -31,7 +31,6 @@ function updateAll() {
     // Stream information
     for (let side of ["left", "right"]) {
         pullLS($("#streamer-" + side), lsread(side + "_streamer"));
-        // TODO: Something with stream url
         if (currentStream[side] != lsread(side + "_stream")) {
             currentStream[side] = lsread(side + "_stream");
             $("#player-" + side).attr("src",
@@ -39,12 +38,15 @@ function updateAll() {
             );
         }
         pullLS($("#score-" + side), lsread(side + "_score"));
-        for (let i = 1; i <= 3; i++) {
+        let npoints = parseInt(lsread("ntowin"));
+        $(".points." + side).html("");
+        for (let i = 1; i <= npoints; i++) {
+            let point = document.createElement("div");
+            point.classList.add("point");
             if (lsread(side + "_score") >= i) {
-                $(".points." + side + " > .point:nth-child(" + i + ")").addClass("on");
-            } else {
-                $(".points." + side + " > .point:nth-child(" + i + ")").removeClass("on");
+                point.classList.add("on");
             }
+            $(".points." + side).append(point);
         }
     }
 }
