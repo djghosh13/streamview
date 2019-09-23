@@ -35,7 +35,7 @@ function updateAll() {
         if (currentStream[side] != lsread(side + "_stream")) {
             currentStream[side] = lsread(side + "_stream");
             $("#player-" + side).attr("src",
-                "https://player.twitch.tv/?volume=1&!muted&channel=" + lsread(side + "_stream")
+                "https://player.twitch.tv/?muted=true&autoplay=true&channel=" + lsread(side + "_stream")
             );
         }
         pullLS($("#score-" + side), lsread(side + "_score"));

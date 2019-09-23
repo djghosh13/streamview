@@ -69,14 +69,14 @@ function receiveAll() {
 
 function activateLocalStorage() {
     localStorage.setItem("cvre_overlay", "active");
-    lswrite("title", "Loading...");
-    lswrite("casters", "Loading...");
-    lswrite("nextsong", "Loading...");
+    lswrite("title", "");
+    lswrite("casters", "");
+    lswrite("nextsong", "");
     for (let key of ["title", "artist", "bpm", "mapper"]) {
-        lswrite("song_" + key, "Loading...");
+        lswrite("song_" + key, "");
     }
     for (let side of ["left", "right"]) {
-        lswrite(side + "_streamer", "Loading...");
+        lswrite(side + "_streamer", "");
         lswrite(side + "_stream", "");
         lswrite(side + "_score", 0);
     }
