@@ -49,7 +49,7 @@ function receiveAll() {
     pullLS($("#casters"), lsread("casters"));
     pullLS($("#next-song"), lsread("nextsong"));
     // Song information
-    for (let key of ["title", "artist", "bpm", "mapper"]) {
+    for (let key of ["artist", "bpm", "mapper"]) {
         pullLS($("#song-" + key), lsread("song_" + key));
     }
     // Stream information
@@ -88,7 +88,7 @@ function activateLocalStorage() {
     lswrite("casters", "");
     lswrite("nextsong", "");
     lswrite("ntowin", 0);
-    for (let key of ["title", "artist", "bpm", "mapper"]) {
+    for (let key of ["artist", "bpm", "mapper"]) {
         lswrite("song_" + key, "");
     }
     for (let side of ["left", "right"]) {

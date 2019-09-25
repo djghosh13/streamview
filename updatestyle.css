@@ -9,6 +9,11 @@ input[type="text"] {
     padding: 0;
 }
 
+.song-info {
+    padding-left: 5%;
+    text-align: left;
+}
+
 input[type="text"]:hover {
     font-weight: bolder;
 }
@@ -20,11 +25,14 @@ img#submit {
 .points .point {
     cursor: pointer;
 }
-.points .point:hover {
-    background-image: url(res/light_on.svg);
+.points .point:last-child {
+    background-image: url(res/light_add.svg);
 }
-.points .point.on:hover {
-    background-image: url(res/light_off.svg);
+.points .point:hover {
+    background-image: url(res/light_remove.svg);
+}
+.points .point:last-child:hover {
+    background-image: url(res/light_on.svg);
 }
 
 /* Stream window */
@@ -51,4 +59,20 @@ img#submit {
 
 .next-song input[type="text"] {
     width: 100%;
+}
+
+/* Autocompleter? */
+
+select {
+    border: 1px solid rgb(255, 220, 255);
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    background-color: inherit;
+    width: 50%;
+}
+
+select option {
+    color: black;
+    background-color: transparent;
 }
