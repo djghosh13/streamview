@@ -26,10 +26,16 @@ $(document).ready(function() {
     $(".mute.left").click(function() {
         muted["left"] = !muted["left"];
         changed["left"] = true;
+
+        let url = muted["left"] ? "res/volume_muted.svg" : "res/volume.svg";
+        $(this).attr("src", url);
     });
     $(".mute.right").click(function() {
         muted["right"] = !muted["right"];
         changed["right"] = true;
+
+        let url = muted["right"] ? "res/volume_muted.svg" : "res/volume.svg";
+        $(this).attr("src", url);
     });
 });
 
