@@ -67,7 +67,7 @@ img#submit {
 
 /* Autocompleter? */
 
-.song-info select {
+select {
     border: 1px solid rgb(255, 220, 255);
     font-size: inherit;
     font-family: inherit;
@@ -79,6 +79,10 @@ img#submit {
 select option {
     color: black;
     background-color: transparent;
+}
+
+select#next-song {
+    width: 100%;
 }
 
 /* Updated! popup */

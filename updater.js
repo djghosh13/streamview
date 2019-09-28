@@ -33,14 +33,18 @@ $(document).ready(function() {
             }
         }
     });
+    $("select#next-song").change(function() {
+        let songname = $(this).val();
+        lswrite("song_title", songname);
+    });
     $("#submit").click(function() {
         // Global information
         pushLS($("#title"), "title");
         pushLS($("#casters"), "casters");
-        pushLS($("#next-song"), "nextsong");
         lswrite("ntowin", Math.ceil($("#best-of").find("input").val() / 2));
         // Song information
         lswrite("song_title", $("#song-title").val());
+        lswrite("nextsong", $("#next-song").val());
         for (let key of ["artist", "bpm", "mapper"]) {
             pushLS($("#song-" + key), "song_" + key);
         }
@@ -59,10 +63,10 @@ function receiveAll() {
     // Global information
     pullLS($("#title"), lsread("title"));
     pullLS($("#casters"), lsread("casters"));
-    pullLS($("#next-song"), lsread("nextsong"));
     pullLS($("#best-of"), parseInt(lsread("ntowin"))*2 - 1);
     // Song information
     $("#song-title").val(lsread("song_title"));
+    $("#next-song").val(lsread("nextsong"));
     for (let key of ["artist", "bpm", "mapper"]) {
         pullLS($("#song-" + key), lsread("song_" + key));
     }
@@ -83,24 +87,17 @@ function getMap() {
         $(option).text(key);
         menu.append(option);
     }
-}
-
-function changeNToWin() {
-    if ($(this).hasClass("on")) {
-        lswrite("ntowin", Math.max(parseInt(lsread("ntowin")) - 1, 0));
-    } else {
-        lswrite("ntowin", parseInt(lsread("ntowin")) + 1);
-    }
-    $("#submit").click();
-    receiveAll();
+    // Copy over
+    $("select#next-song").html(menu.html());
 }
 
 function activateLocalStorage() {
     localStorage.setItem("cvre_overlay", "active");
     lswrite("title", "");
     lswrite("casters", "");
-    lswrite("nextsong", "");
     lswrite("ntowin", 1);
+    lswrite("nextsong", "Song");
+    lswrite("song_title", "Song")
     for (let key of ["artist", "bpm", "mapper"]) {
         lswrite("song_" + key, "");
     }
