@@ -2,6 +2,7 @@
 
 import bs4
 import csv
+import re
 import sys
 
 if __name__ == "__main__":
@@ -14,7 +15,7 @@ if __name__ == "__main__":
     songs = {}
     with open(fname, 'r') as file:
         reader = csv.reader(file)
-        next(reader)
+        # next(reader)
         for row in reader:
             data = row[1:5]
             if ''.join(data):
@@ -25,13 +26,14 @@ if __name__ == "__main__":
                     "bpm": bpm,
                     "mapper": mapper
                 }
-    print(repr(songs))
 
     # Open HTML file and edit
     with open("update.html", 'r') as file:
-        soup = bs4.BeautifulSoup(file.read())
+        text = file.read()
     
-    soup.find("script", id="map-data").string = "var MapData = " + repr(songs)
+    newtext = re.sub(r'<script id="map-data" type="text/javascript">.*</script>',
+        r'<script id="map-data" type="text/javascript">var MapData = ' +
+        repr(songs) + r';</script>', text)
     
     with open("update.html", 'w') as file:
-        file.write(str(soup))
+        file.write(newtext)

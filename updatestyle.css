@@ -11,6 +11,7 @@ input[type="text"] {
 
 .song-info {
     padding-left: 5%;
+    padding-right: 5%;
     text-align: left;
 }
 
@@ -63,13 +64,13 @@ img#submit {
 
 /* Autocompleter? */
 
-select {
+.song-info select {
     border: 1px solid rgb(255, 220, 255);
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     background-color: inherit;
-    width: 50%;
+    width: auto;
 }
 
 select option {

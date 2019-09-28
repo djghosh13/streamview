@@ -1,3 +1,5 @@
+var MapData = {};
+
 function pullLS(field, value) {
     if (field.children("input").val() != value) {
         field.children("input").val(value);
@@ -16,6 +18,16 @@ function lswrite(key, value) {
 
 $(document).ready(function() {
     receiveAll();
+    getMap();
+    $("select#song-title").change(function() {
+        let songname = $(this).val();
+        if (songname in MapData) {
+            for (let key in MapData[songname]) {
+                lswrite("song_" + key, MapData[songname][key]);
+                pullLS($("#song-" + key), lsread("song_" + key));
+            }
+        }
+    });
     $("#submit").click(function() {
         // Global information
         pushLS($("#title"), "title");
@@ -69,6 +81,17 @@ function receiveAll() {
             $(point).click(changeNToWin);
             $(".points." + side).append(point);
         }
+    }
+}
+
+function getMap() {
+    let menu = $("select#song-title");
+    menu.html("");
+    for (let key in MapData) {
+        let option = document.createElement("option");
+        $(option).attr("value", key);
+        $(option).text(key);
+        menu.append(option);
     }
 }
 
