@@ -114,27 +114,30 @@
           </g>
           <g
              id="g1471"
-             transform="matrix(1,0,0,1.2738785,0,-9.3180134)">
-            <text
-               xml:space="preserve"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.33333206px;line-height:1.25;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic';letter-spacing:0px;word-spacing:0px;fill:#500050;fill-opacity:1;stroke:none;"
-               x="10.171249"
-               y="48.023277"
-               id="text1465"><tspan
-                 sodipodi:role="line"
-                 id="tspan1463"
-                 x="10.171249"
-                 y="48.023277">UPDATE</tspan></text>
+             transform="matrix(1,0,0,1.1053379,0,-3.5838513)">
             <text
                id="text1461"
                y="45.834091"
                x="10.171249"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.33333206px;line-height:1.25;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.33333206px;line-height:1.25;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;stroke-width:1.42673636;stroke-miterlimit:4;stroke-dasharray:none"
                xml:space="preserve"><tspan
                  y="45.834091"
                  x="10.171249"
                  id="tspan1459"
                  sodipodi:role="line">UPDATE</tspan></text>
+            <path
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.33333206px;line-height:1.25;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic';letter-spacing:0px;word-spacing:0px;fill:#b7a0ca;fill-opacity:1;stroke:none;stroke-width:1.05135047"
+               d="M 12.796875 32.214844 L 12.796875 38.535156 C 12.796875 40.899351 13.47678 42.833403 14.837891 44.337891 C 16.393446 46.057305 18.823351 46.917969 22.128906 46.917969 C 25.434462 46.917969 27.866319 46.057305 29.421875 44.337891 C 30.782986 42.833403 31.462891 40.899351 31.462891 38.535156 L 31.462891 32.214844 L 28.109375 32.214844 L 28.109375 38.373047 C 28.109375 39.877535 27.671875 41.114861 26.796875 42.082031 C 25.727431 43.264129 24.170573 43.853516 22.128906 43.853516 C 20.08724 43.853516 18.532335 43.264129 17.462891 42.082031 C 16.587891 41.114861 16.150391 39.877535 16.150391 38.373047 L 16.150391 32.214844 L 12.796875 32.214844 z M 36.421875 32.214844 L 36.421875 46.59375 L 39.775391 46.59375 L 39.775391 35.794922 L 48.087891 35.794922 C 50.421224 35.794922 52.220486 35.096243 53.484375 33.699219 C 53.874283 33.268238 54.195222 32.768554 54.464844 32.214844 L 49.542969 32.214844 C 48.922828 32.546127 48.204299 32.732422 47.359375 32.732422 L 39.775391 32.732422 L 39.775391 32.214844 L 36.421875 32.214844 z M 59.609375 32.214844 L 59.609375 46.59375 L 68.359375 46.59375 C 71.373264 46.59375 73.803168 45.573055 75.650391 43.53125 C 77.886502 41.059592 79.003906 37.56815 79.003906 33.054688 C 79.003906 32.765884 78.988448 32.494828 78.980469 32.214844 L 75.478516 32.214844 C 75.488269 32.49288 75.503906 32.765871 75.503906 33.054688 C 75.503906 36.708443 74.581597 39.555852 72.734375 41.597656 C 71.567708 42.887217 70.060113 43.53125 68.212891 43.53125 L 62.962891 43.53125 L 62.962891 32.214844 L 59.609375 32.214844 z M 86.888672 32.214844 L 81.775391 46.59375 L 85.275391 46.59375 L 88.337891 38.212891 L 97.962891 38.212891 L 101.02539 46.59375 L 104.52539 46.59375 L 99.412109 32.214844 L 95.941406 32.214844 L 96.941406 35.150391 L 89.359375 35.150391 L 90.359375 32.214844 L 86.888672 32.214844 z M 114.29688 32.214844 L 114.29688 46.59375 L 117.65039 46.59375 L 117.65039 32.214844 L 114.29688 32.214844 z M 129.46289 32.214844 L 129.46289 46.59375 L 146.23438 46.59375 L 146.23438 43.53125 L 132.81641 43.53125 L 132.81641 33.699219 L 144.62891 33.699219 L 144.62891 32.214844 L 129.46289 32.214844 z "
+               id="text1481"
+               transform="matrix(1,0,0,0.90470073,0,3.2423129)" />
+            <rect
+               style="opacity:1;fill:#c5b034;fill-opacity:1;stroke:none;stroke-width:1.43531013;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+               id="rect2138"
+               width="134.7809"
+               height="1.7825024"
+               x="12.12455"
+               y="49.882343"
+               ry="0.31728578" />
           </g>
         </g>
       </g>

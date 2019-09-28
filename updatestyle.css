@@ -23,17 +23,20 @@ img#submit {
     cursor: pointer;
 }
 
-.points .point {
-    cursor: pointer;
+/* Best of */
+
+.header .bestof {
+    position: fixed;
+    top: 1.5%;
+    left: 1.5%;
+
+    width: 20%;
+
+    font-size: 1.8em;
 }
-.points .point:last-child {
-    background-image: url(res/light_add.svg);
-}
-.points .point:hover {
-    background-image: url(res/light_remove.svg);
-}
-.points .point:last-child:hover {
-    background-image: url(res/light_on.svg);
+
+.bestof input[type="text"] {
+    width: 50%;
 }
 
 /* Stream window */
@@ -76,4 +79,37 @@ img#submit {
 select option {
     color: black;
     background-color: transparent;
+}
+
+/* Updated! popup */
+
+.popup {
+    box-sizing: border-box;
+
+    position: fixed;
+    top: 1%;
+    right: 0;
+
+    width: 16%;
+    height: 10%;
+
+    font-size: 1.8em;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    line-height: 1.5;
+
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    opacity: 0;
+}
+
+.popup.show {
+    opacity: 1;
+}
+
+.popup p {
+    display: inline-block;
+    line-height: 0.8;
+    vertical-align: middle;
 }

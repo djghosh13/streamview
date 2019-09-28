@@ -209,6 +209,26 @@ body {
     flex-grow: 1;
 }
 
+/* Mute buttons */
+
+.mute {
+    position: fixed;
+    top: 1%;
+
+    width: auto;
+    height: 5%;
+
+    cursor: pointer;
+    z-index: 200;
+}
+
+.mute.left {
+    left: 1%;
+}
+.mute.right {
+    right: 1%;
+}
+
 /* Scoring lights */
 
 .points {

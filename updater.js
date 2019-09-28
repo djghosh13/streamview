@@ -1,12 +1,12 @@
 var MapData = {};
 
 function pullLS(field, value) {
-    if (field.children("input").val() != value) {
-        field.children("input").val(value);
+    if (field.find("input").val() != value) {
+        field.find("input").val(value);
     }
 }
 function pushLS(field, key) {
-    lswrite(key, field.children("input").val());
+    lswrite(key, field.find("input").val());
 }
 
 function lsread(key) {
@@ -17,8 +17,13 @@ function lswrite(key, value) {
 }
 
 $(document).ready(function() {
-    receiveAll();
     getMap();
+    receiveAll();
+    $("#casters input").keypress(function(event) {
+        if (event.which == 13) {
+            $(this).val($(this).val() + "<br />");
+        }
+    });
     $("select#song-title").change(function() {
         let songname = $(this).val();
         if (songname in MapData) {
@@ -33,8 +38,10 @@ $(document).ready(function() {
         pushLS($("#title"), "title");
         pushLS($("#casters"), "casters");
         pushLS($("#next-song"), "nextsong");
+        lswrite("ntowin", Math.ceil($("#best-of").find("input").val() / 2));
         // Song information
-        for (let key of ["title", "artist", "bpm", "mapper"]) {
+        lswrite("song_title", $("#song-title").val());
+        for (let key of ["artist", "bpm", "mapper"]) {
             pushLS($("#song-" + key), "song_" + key);
         }
         // Stream information
@@ -42,13 +49,6 @@ $(document).ready(function() {
             pushLS($("#streamer-" + side), side + "_streamer");
             pushLS($("#player-" + side), side + "_stream");
             pushLS($("#score-" + side), side + "_score");
-            for (let i = 1; i <= 3; i++) {
-                if (lsread(side + "_score") >= i) {
-                    $(".points." + side + " > .point:nth-child(" + i + ")").addClass("on");
-                } else {
-                    $(".points." + side + " > .point:nth-child(" + i + ")").removeClass("on");
-                }
-            }
         }
     });
 });
@@ -60,7 +60,9 @@ function receiveAll() {
     pullLS($("#title"), lsread("title"));
     pullLS($("#casters"), lsread("casters"));
     pullLS($("#next-song"), lsread("nextsong"));
+    pullLS($("#best-of"), parseInt(lsread("ntowin"))*2 - 1);
     // Song information
+    $("#song-title").val(lsread("song_title"));
     for (let key of ["artist", "bpm", "mapper"]) {
         pullLS($("#song-" + key), lsread("song_" + key));
     }
@@ -69,18 +71,6 @@ function receiveAll() {
         pullLS($("#streamer-" + side), lsread(side + "_streamer"));
         pullLS($("#player-" + side), lsread(side + "_stream"));
         pullLS($("#score-" + side), lsread(side + "_score"));
-
-        let npoints = parseInt(lsread("ntowin"));
-        $(".points." + side).html("");
-        for (let i = 0; i <= npoints; i++) {
-            let point = document.createElement("div");
-            point.classList.add("point");
-            if (i < npoints) {
-                point.classList.add("on");
-            }
-            $(point).click(changeNToWin);
-            $(".points." + side).append(point);
-        }
     }
 }
 
@@ -110,7 +100,7 @@ function activateLocalStorage() {
     lswrite("title", "");
     lswrite("casters", "");
     lswrite("nextsong", "");
-    lswrite("ntowin", 0);
+    lswrite("ntowin", 1);
     for (let key of ["artist", "bpm", "mapper"]) {
         lswrite("song_" + key, "");
     }

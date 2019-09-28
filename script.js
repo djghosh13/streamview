@@ -2,6 +2,14 @@ var currentStream = {
     "left": "",
     "right": ""
 };
+var muted = {
+    "left": true,
+    "right": true
+};
+var changed = {
+    "left": true,
+    "right": true
+};
 
 function pullLS(field, value) {
     if (field.html() != value) {
@@ -14,7 +22,15 @@ function lsread(key) {
 }
 
 $(document).ready(function() {
-    setInterval(updateAll, 2000);
+    setInterval(updateAll, 1000);
+    $(".mute.left").click(function() {
+        muted["left"] = !muted["left"];
+        changed["left"] = true;
+    });
+    $(".mute.right").click(function() {
+        muted["right"] = !muted["right"];
+        changed["right"] = true;
+    });
 });
 
 function updateAll() {
@@ -31,11 +47,12 @@ function updateAll() {
     // Stream information
     for (let side of ["left", "right"]) {
         pullLS($("#streamer-" + side), lsread(side + "_streamer"));
-        if (currentStream[side] != lsread(side + "_stream")) {
+        if (currentStream[side] != lsread(side + "_stream") || changed[side]) {
             currentStream[side] = lsread(side + "_stream");
             $("#player-" + side).attr("src",
-                "https://player.twitch.tv/?muted=true&autoplay=true&channel=" + lsread(side + "_stream")
+                "https://player.twitch.tv/?autoplay=true&channel=" + lsread(side + "_stream") + "&muted=" + muted[side]
             );
+            changed[side] = false;
         }
         pullLS($("#score-" + side), lsread(side + "_score"));
         let npoints = parseInt(lsread("ntowin"));
